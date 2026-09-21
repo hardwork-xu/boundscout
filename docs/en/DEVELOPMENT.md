@@ -70,3 +70,7 @@ Review the paired [architecture contract](ARCHITECTURE.md), [walkthrough](WALKTH
 The [frozen protocol](PROTOCOL.md) governs experimental targets and timing. Raw benchmark evidence and generated [Results](RESULTS.md) answer performance questions; this development record answers what was built and what failed along the way. Local tests, static checks, package installation, container execution and remote CI are separate acceptance activities. A pending or unavailable activity must not be reported as passed because another activity succeeded.
 
 Later validation should be appended as an observed checkpoint, preserving the earlier findings and their status at the time. Any engine change after timing requires rerunning affected experiments and updating the recorded source fingerprint. Do not rewrite the initial target to fit the measurements.
+
+## Public verification checkpoint
+
+Commit `58c2e8e` preserves the complete benchmark and corrects the earlier test-count typo; `2f5a4cd` adds the reviewed bilingual documents and local acceptance. GitHub run `35600862457` completed successfully for both Ubuntu 24.04 and macOS 14 at `2f5a4cd`. This is ordinary CPU CI evidence, separate from the local M1 Pro full experiment. The current publication receipt records repository, CI and release state.

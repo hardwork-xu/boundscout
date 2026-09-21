@@ -2,7 +2,7 @@
 
 **使用可审阅块剪枝的 CPU 精确向量检索。**
 
-[English](README.md) · [![Python 3.12](https://img.shields.io/badge/Python-3.12-blue)](pyproject.toml) [![MIT](https://img.shields.io/badge/License-MIT-green)](LICENSE)
+[English](README.md) · [![Python 3.12](https://img.shields.io/badge/Python-3.12-blue)](pyproject.toml) [![MIT](https://img.shields.io/badge/License-MIT-green)](LICENSE) [![CPU checks](https://github.com/hardwork-xu/boundscout/actions/workflows/ci.yml/badge.svg)](https://github.com/hardwork-xu/boundscout/actions/workflows/ci.yml)
 
 我希望维护一个能解释性能来源和边界的检索项目：不仅输出最近邻，还能检查为何跳过某个块、计算了多少距离，以及建索引成本何时能被摊销。BoundScout 面向研究离线特征向量检索的开发者与学生。
 

@@ -16,5 +16,6 @@
     "CPU",
     "vector search",
     "reproducible benchmarks"
-  ]
+  ],
+  "repository-code": "https://github.com/hardwork-xu/boundscout"
 }

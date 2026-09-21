@@ -21,6 +21,11 @@ jobs:
       - run: make install
       - run: make demo test lint typecheck docs build
       - run: make benchmark
+      - name: Docker build and demo (Linux)
+        if: runner.os == 'Linux'
+        run: |
+          docker build -t boundscout .
+          docker run --rm boundscout
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: evidence-${{ matrix.os }}
