@@ -17,5 +17,5 @@
     "vector search",
     "reproducible benchmarks"
   ],
-  "repository-code": "https://github.com/hardwork-xu/boundscout"
+  "repository-code": "https://github.com/hardwork-xu/block-pruned-vector-search"
 }

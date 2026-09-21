@@ -92,11 +92,13 @@ with BoundIndex.build(vectors, leaf_size=128) as index:
         )
         if (ROOT / "results/publication.json").exists():
             badges += (
-                " [![CPU checks](https://github.com/hardwork-xu/boundscout/actions/workflows/ci.yml/badge.svg)]"
-                "(https://github.com/hardwork-xu/boundscout/actions/workflows/ci.yml)"
+                " [![CPU checks](https://github.com/hardwork-xu/block-pruned-vector-search/actions/workflows/ci.yml/badge.svg)]"
+                "(https://github.com/hardwork-xu/block-pruned-vector-search/actions/workflows/ci.yml)"
             )
         if zh:
-            body = rf"""# BoundScout
+            body = rf"""# 分块剪枝向量检索 · Block-Pruned Vector Search
+
+仓库原名 `boundscout`；包名及现有命令保持不变（`boundscout`）。
 
 **使用可审阅块剪枝的 CPU 精确向量检索。**
 
@@ -166,7 +168,9 @@ Apple M1 Pro、16 GiB、macOS arm64、Python 3.12.2、NumPy 2.2.6、SciPy 1.15.3
 验收记录见 [acceptance.json](results/acceptance.json)；其通过、失败和未执行状态分别记录。MIT 许可证见 [LICENSE](LICENSE)，第三方归属见 [NOTICE](NOTICE_zh.md)。引用使用 [CITATION.cff](CITATION.cff)，并保留版本、源码提交及运行 ID；无 DOI 或已发表论文声明。
 """
         else:
-            body = rf"""# BoundScout
+            body = rf"""# Block-Pruned Vector Search
+
+Previously `boundscout`. Package and command names remain unchanged (`boundscout`).
 
 **Inspectable exact CPU vector search with spatial block pruning.**
 

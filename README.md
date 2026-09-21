@@ -1,8 +1,10 @@
-# BoundScout
+# Block-Pruned Vector Search
+
+Previously `boundscout`. Package and command names remain unchanged (`boundscout`).
 
 **Inspectable exact CPU vector search with spatial block pruning.**
 
-[简体中文](README_zh.md) · [![Python 3.12](https://img.shields.io/badge/Python-3.12-blue)](pyproject.toml) [![MIT](https://img.shields.io/badge/License-MIT-green)](LICENSE) [![CPU checks](https://github.com/hardwork-xu/boundscout/actions/workflows/ci.yml/badge.svg)](https://github.com/hardwork-xu/boundscout/actions/workflows/ci.yml)
+[简体中文](README_zh.md) · [![Python 3.12](https://img.shields.io/badge/Python-3.12-blue)](pyproject.toml) [![MIT](https://img.shields.io/badge/License-MIT-green)](LICENSE) [![CPU checks](https://github.com/hardwork-xu/block-pruned-vector-search/actions/workflows/ci.yml/badge.svg)](https://github.com/hardwork-xu/block-pruned-vector-search/actions/workflows/ci.yml)
 
 I want to maintain a retrieval project whose speed and limits can be explained: which block was skipped, how many distances were evaluated, and when index construction pays for itself. BoundScout is for developers and students studying offline feature-vector retrieval.
 
