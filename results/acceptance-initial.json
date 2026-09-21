@@ -1,0 +1,207 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-21T12:27:07.150010+00:00",
+  "source": {
+    "git_revision": "6b730521339dad01b7bfc9221d5d890e97bf7fc8",
+    "files_sha256": {
+      "benchmark.py": "55c312bdb8bca9ecd2f89b6109def3d88fe01b3b7cf5666185387e77f9a61262",
+      "pyproject.toml": "c2751c13958685512f5883b7afec17ab73c900da7890375a7da89cd6100368d3",
+      "requirements.lock": "887ad5ad3179e88fc918f053d7d19e9f891d07088219a343a026fbe7b0ecdee2",
+      "scripts/analyze.py": "b9fda55aca814c0c0d2b025f12d0e6094d3e583b5b4e9472964669745dedb2c6",
+      "scripts/check_docs.py": "bea09134d095f24de98dc56c40860a0639a6d34d9e68f556807ebba84e19b081",
+      "scripts/download_data.py": "de53bf09da3951637b18506099cd11b7030d5a776b1bacb2ff6e4faa3f6ef8bb",
+      "scripts/render_readme.py": "3e94c1b135eaf2d4fc74346a2d67c2f5f02394cb09a042e70042a05548018aae",
+      "scripts/validate.py": "258578a414ccfd3e67fd54b02dbcc6d6c28a8a03869cd76050f5bbb784df8526",
+      "src/boundscout/__init__.py": "42b359394ba8f4c44c1b2b98483e6652976f5837542feffe1fc62de9161fd3d2",
+      "src/boundscout/__main__.py": "263f1b5e2a81dd4b97753bc3fea2693fba6597124406f726f4df960f3c8d8860",
+      "src/boundscout/cli.py": "c537494b2dd1e3b7012a434529ff481f0498fa52bc6143481b9bbd2a7b80def9",
+      "src/boundscout/engine.py": "f925bf9065164441ca917a3b3aaa19d6aba6186d41b3c04067b978079b836717",
+      "src/boundscout/storage.py": "9acd105dbc2eb1333cf687eba781a75f72a5f67414605c80c2d04858b72fcfc2",
+      "tests/test_benchmark.py": "a3b6e6215204fe5ac3c323399741c5120b03b696950f1e87fe500e3ee022fac7",
+      "tests/test_cli.py": "64a826b4f9e698ff77dbb2499e523a98218f9d65b5a28a0b7c299f886146c8c8",
+      "tests/test_engine.py": "9b12805d033f9cf7cb0499b75a9f8356ba03cda20cf8449f03ac7752dce3f629",
+      "tests/test_storage.py": "30a625db60f2285866f72b75fb6a01e280595b95f7e67ed13c49a847547a5b20"
+    },
+    "sha256": "4392a5d283ab8ef408ec7f91546a2a85470f61bea9e7e4fc3ae2bc445a24b826"
+  },
+  "platform": "Darwin",
+  "checks": [
+    {
+      "name": "public-api",
+      "command": [
+        "python",
+        "-c",
+        "import numpy as np; from boundscout import BoundIndex; i=BoundIndex.build(np.eye(4)); print(i.search(np.eye(4),k=1).indices.tolist()); i.close()"
+      ],
+      "started_at": "2026-09-21T12:26:59.257123+00:00",
+      "exit_code": 0,
+      "status": "passed",
+      "summary": "[[0], [1], [2], [3]]\n",
+      "log": "results/logs/initial-public-api.log",
+      "source_sha256": "4392a5d283ab8ef408ec7f91546a2a85470f61bea9e7e4fc3ae2bc445a24b826"
+    },
+    {
+      "name": "default-demo",
+      "command": [
+        "python",
+        "-m",
+        "boundscout",
+        "demo"
+      ],
+      "started_at": "2026-09-21T12:26:59.721262+00:00",
+      "exit_code": 0,
+      "status": "passed",
+      "summary": "{\"ok\": true, \"shape\": [4, 10], \"max_abs_error\": 0.0, \"stats\": {\"evaluated_vectors\": 2816, \"visited_blocks\": 22, \"total_blocks\": 128, \"query_count\": 4}, \"index_array_bytes\": 565512}\n",
+      "log": "results/logs/initial-default-demo.log",
+      "source_sha256": "4392a5d283ab8ef408ec7f91546a2a85470f61bea9e7e4fc3ae2bc445a24b826"
+    },
+    {
+      "name": "storage-example",
+      "command": [
+        "python",
+        "examples/local_vectors.py"
+      ],
+      "started_at": "2026-09-21T12:26:59.995692+00:00",
+      "exit_code": 0,
+      "status": "passed",
+      "summary": "[[1763 1523 1346 1410  213]\n [1890  634 1939  913  672]\n [1136 1135 1547  823 1672]]\n[[5.78976179 6.28685284 7.72848077 8.46151454 8.60874718]\n [5.99552718 6.47025906 6.84843244 7.70140301 8.2024466 ]\n [6.6975479  7.41061027 8.18335661 8.5853583  9.57761856]]\n",
+      "log": "results/logs/initial-storage-example.log",
+      "source_sha256": "4392a5d283ab8ef408ec7f91546a2a85470f61bea9e7e4fc3ae2bc445a24b826"
+    },
+    {
+      "name": "unit-tests",
+      "command": [
+        "python",
+        "-m",
+        "pytest",
+        "-m",
+        "not integration",
+        "-q"
+      ],
+      "started_at": "2026-09-21T12:27:00.327028+00:00",
+      "exit_code": 0,
+      "status": "passed",
+      "summary": "........................................................................ [ 71%]\n.............................                                            [100%]\n101 passed, 10 deselected in 0.84s\n",
+      "log": "results/logs/initial-unit-tests.log",
+      "source_sha256": "4392a5d283ab8ef408ec7f91546a2a85470f61bea9e7e4fc3ae2bc445a24b826"
+    },
+    {
+      "name": "integration-tests",
+      "command": [
+        "python",
+        "-m",
+        "pytest",
+        "-m",
+        "integration",
+        "-q"
+      ],
+      "started_at": "2026-09-21T12:27:01.375079+00:00",
+      "exit_code": 0,
+      "status": "passed",
+      "summary": "..........                                                               [100%]\n10 passed, 101 deselected in 3.96s\n",
+      "log": "results/logs/initial-integration-tests.log",
+      "source_sha256": "4392a5d283ab8ef408ec7f91546a2a85470f61bea9e7e4fc3ae2bc445a24b826"
+    },
+    {
+      "name": "ruff",
+      "command": [
+        "python",
+        "-m",
+        "ruff",
+        "check",
+        "."
+      ],
+      "started_at": "2026-09-21T12:27:05.525691+00:00",
+      "exit_code": 0,
+      "status": "passed",
+      "summary": "All checks passed!\n",
+      "log": "results/logs/initial-ruff.log",
+      "source_sha256": "4392a5d283ab8ef408ec7f91546a2a85470f61bea9e7e4fc3ae2bc445a24b826"
+    },
+    {
+      "name": "format",
+      "command": [
+        "python",
+        "-m",
+        "ruff",
+        "format",
+        "--check",
+        "."
+      ],
+      "started_at": "2026-09-21T12:27:05.609840+00:00",
+      "exit_code": 0,
+      "status": "passed",
+      "summary": "16 files already formatted\n",
+      "log": "results/logs/initial-format.log",
+      "source_sha256": "4392a5d283ab8ef408ec7f91546a2a85470f61bea9e7e4fc3ae2bc445a24b826"
+    },
+    {
+      "name": "mypy",
+      "command": [
+        "python",
+        "-m",
+        "mypy",
+        "src/boundscout"
+      ],
+      "started_at": "2026-09-21T12:27:05.650576+00:00",
+      "exit_code": 0,
+      "status": "passed",
+      "summary": "Success: no issues found in 5 source files\n",
+      "log": "results/logs/initial-mypy.log",
+      "source_sha256": "4392a5d283ab8ef408ec7f91546a2a85470f61bea9e7e4fc3ae2bc445a24b826"
+    },
+    {
+      "name": "documentation",
+      "command": [
+        "python",
+        "scripts/check_docs.py"
+      ],
+      "started_at": "2026-09-21T12:27:06.053370+00:00",
+      "exit_code": 1,
+      "status": "failed",
+      "summary": "{\"ok\": false, \"document_pairs\": 9, \"local_links\": 210, \"errors\": [\"broken link / 链接失效: README.md -> docs/en/EXPERIMENTS.md\", \"broken link / 链接失效: README.md -> docs/en/EXPERIMENTS.md\", \"broken link / 链接失效: README_zh.md -> docs/zh/EXPERIMENTS.md\", \"broken link / 链接失效: README_zh.md -> docs/zh/EXPERIMENTS.md\", \"broken link / 链接失效: docs/zh/RELEASE.md -> EXPERIMENTS.md\", \"broken link / 链接失效: docs/en/RELEASE.md -> EXPERIMENTS.md\"], \"scope\": \"file pairing and relative links; semantic parity reviewed manually\"}\n",
+      "log": "results/logs/initial-documentation.log",
+      "source_sha256": "4392a5d283ab8ef408ec7f91546a2a85470f61bea9e7e4fc3ae2bc445a24b826"
+    },
+    {
+      "name": "build",
+      "command": [
+        "python",
+        "-m",
+        "build",
+        "--no-isolation"
+      ],
+      "started_at": "2026-09-21T12:27:06.093526+00:00",
+      "exit_code": 0,
+      "status": "passed",
+      "summary": "build/bdist.macosx-10.9-universal2/wheel/./boundscout\ncopying build/lib/boundscout/cli.py -> build/bdist.macosx-10.9-universal2/wheel/./boundscout\ncopying build/lib/boundscout/storage.py -> build/bdist.macosx-10.9-universal2/wheel/./boundscout\ncopying build/lib/boundscout/__main__.py -> build/bdist.macosx-10.9-universal2/wheel/./boundscout\nrunning install_egg_info\nCopying src/boundscout.egg-info to build/bdist.macosx-10.9-universal2/wheel/./boundscout-0.1.0-py3.12.egg-info\nrunning install_scripts\ncreating build/bdist.macosx-10.9-universal2/wheel/boundscout-0.1.0.dist-info/WHEEL\ncreating '$PROJECT/dist/.tmp-5vatwkkf/boundscout-0.1.0-py3-none-any.whl' and adding 'build/bdist.macosx-10.9-universal2/wheel' to it\nadding 'boundscout/__init__.py'\nadding 'boundscout/__main__.py'\nadding 'boundscout/cli.py'\nadding 'boundscout/engine.py'\nadding 'boundscout/storage.py'\nadding 'boundscout-0.1.0.dist-info/licenses/LICENSE'\nadding 'boundscout-0.1.0.dist-info/licenses/NOTICE.md'\nadding 'boundscout-0.1.0.dist-info/licenses/NOTICE_zh.md'\nadding 'boundscout-0.1.0.dist-info/METADATA'\nadding 'boundscout-0.1.0.dist-info/WHEEL'\nadding 'boundscout-0.1.0.dist-info/entry_points.txt'\nadding 'boundscout-0.1.0.dist-info/top_level.txt'\nadding 'boundscout-0.1.0.dist-info/RECORD'\nremoving build/bdist.macosx-10.9-universal2/wheel\nSuccessfully built boundscout-0.1.0.tar.gz and boundscout-0.1.0-py3-none-any.whl\n",
+      "log": "results/logs/initial-build.log",
+      "source_sha256": "4392a5d283ab8ef408ec7f91546a2a85470f61bea9e7e4fc3ae2bc445a24b826"
+    },
+    {
+      "name": "diff-whitespace",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "started_at": "2026-09-21T12:27:07.128307+00:00",
+      "exit_code": 0,
+      "status": "passed",
+      "summary": "",
+      "log": "results/logs/initial-diff-whitespace.log",
+      "source_sha256": "4392a5d283ab8ef408ec7f91546a2a85470f61bea9e7e4fc3ae2bc445a24b826"
+    },
+    {
+      "name": "docker-build-run",
+      "command": [
+        "docker build -t boundscout .",
+        "docker run --rm boundscout"
+      ],
+      "status": "not_run",
+      "exit_code": null,
+      "reason": "Docker executable absent / 未安装 Docker 可执行程序",
+      "source_sha256": "4392a5d283ab8ef408ec7f91546a2a85470f61bea9e7e4fc3ae2bc445a24b826"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "cff-version": "1.2.0",
+  "message": "If you use this software, cite the version and experiment run. / 使用本软件时请引用版本及实验运行。",
+  "type": "software",
+  "title": "BoundScout: inspectable exact CPU vector search",
+  "version": "0.1.0",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "hardwork-xu",
+      "website": "https://github.com/hardwork-xu"
+    }
+  ],
+  "keywords": [
+    "exact nearest neighbors",
+    "CPU",
+    "vector search",
+    "reproducible benchmarks"
+  ]
+}

@@ -1,0 +1,13 @@
+Obtaining file://$PROJECT
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: boundscout
+  Building editable for boundscout (pyproject.toml): started
+  Building editable for boundscout (pyproject.toml): finished with status 'done'
+  Created wheel for boundscout: filename=boundscout-0.1.0-0.editable-py3-none-any.whl size=5902 sha256=7689ee6172669f2a95aee57ebe30fa7273779c8c1c097d06da64377c9f338966
+  Stored in directory: $TEMP
+Successfully built boundscout
+Installing collected packages: boundscout
+Successfully installed boundscout-0.1.0

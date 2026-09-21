@@ -1,0 +1,1 @@
+{"ok": true, "shape": [4, 10], "max_abs_error": 0.0, "stats": {"evaluated_vectors": 2816, "visited_blocks": 22, "total_blocks": 128, "query_count": 4}, "index_array_bytes": 565512}

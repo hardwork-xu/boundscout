@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "files_scanned": 93,
+  "findings": [],
+  "changed_recorded_benchmark_files": [],
+  "documented_reporting_only_changes": [
+    "scripts/analyze.py"
+  ],
+  "wheel_artifacts_scanned": [
+    "boundscout-0.1.0-py3-none-any.whl"
+  ],
+  "scope": "content/history patterns and recorded source digests; not a security guarantee"
+}

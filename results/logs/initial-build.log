@@ -1,0 +1,187 @@
+* Getting build dependencies for sdist...
+running egg_info
+writing src/boundscout.egg-info/PKG-INFO
+writing dependency_links to src/boundscout.egg-info/dependency_links.txt
+writing entry points to src/boundscout.egg-info/entry_points.txt
+writing requirements to src/boundscout.egg-info/requires.txt
+writing top-level names to src/boundscout.egg-info/top_level.txt
+reading manifest file 'src/boundscout.egg-info/SOURCES.txt'
+reading manifest template 'MANIFEST.in'
+adding license file 'LICENSE'
+adding license file 'NOTICE.md'
+adding license file 'NOTICE_zh.md'
+writing manifest file 'src/boundscout.egg-info/SOURCES.txt'
+* Building sdist...
+running sdist
+running egg_info
+writing src/boundscout.egg-info/PKG-INFO
+writing dependency_links to src/boundscout.egg-info/dependency_links.txt
+writing entry points to src/boundscout.egg-info/entry_points.txt
+writing requirements to src/boundscout.egg-info/requires.txt
+writing top-level names to src/boundscout.egg-info/top_level.txt
+reading manifest file 'src/boundscout.egg-info/SOURCES.txt'
+reading manifest template 'MANIFEST.in'
+adding license file 'LICENSE'
+adding license file 'NOTICE.md'
+adding license file 'NOTICE_zh.md'
+writing manifest file 'src/boundscout.egg-info/SOURCES.txt'
+running check
+creating boundscout-0.1.0
+creating boundscout-0.1.0/configs
+creating boundscout-0.1.0/docs/en
+creating boundscout-0.1.0/docs/zh
+creating boundscout-0.1.0/examples
+creating boundscout-0.1.0/results
+creating boundscout-0.1.0/results/figures
+creating boundscout-0.1.0/results/logs
+creating boundscout-0.1.0/results/raw
+creating boundscout-0.1.0/scripts
+creating boundscout-0.1.0/src/boundscout
+creating boundscout-0.1.0/src/boundscout.egg-info
+creating boundscout-0.1.0/tests
+copying files to boundscout-0.1.0...
+copying .dockerignore -> boundscout-0.1.0
+copying AGENTS.md -> boundscout-0.1.0
+copying CITATION.cff -> boundscout-0.1.0
+copying CONTRIBUTING.md -> boundscout-0.1.0
+copying CONTRIBUTING_zh.md -> boundscout-0.1.0
+copying Dockerfile -> boundscout-0.1.0
+copying LICENSE -> boundscout-0.1.0
+copying MANIFEST.in -> boundscout-0.1.0
+copying Makefile -> boundscout-0.1.0
+copying NOTICE.md -> boundscout-0.1.0
+copying NOTICE_zh.md -> boundscout-0.1.0
+copying README.md -> boundscout-0.1.0
+copying README_zh.md -> boundscout-0.1.0
+copying SECURITY.md -> boundscout-0.1.0
+copying SECURITY_zh.md -> boundscout-0.1.0
+copying benchmark.py -> boundscout-0.1.0
+copying pyproject.toml -> boundscout-0.1.0
+copying requirements.lock -> boundscout-0.1.0
+copying configs/full.json -> boundscout-0.1.0/configs
+copying configs/smoke.json -> boundscout-0.1.0/configs
+copying docs/en/ARCHITECTURE.md -> boundscout-0.1.0/docs/en
+copying docs/en/DEVELOPMENT.md -> boundscout-0.1.0/docs/en
+copying docs/en/PROJECT_TALK.md -> boundscout-0.1.0/docs/en
+copying docs/en/PROTOCOL.md -> boundscout-0.1.0/docs/en
+copying docs/en/RELEASE.md -> boundscout-0.1.0/docs/en
+copying docs/en/RESEARCH.md -> boundscout-0.1.0/docs/en
+copying docs/en/RESULTS.md -> boundscout-0.1.0/docs/en
+copying docs/en/RESUME.md -> boundscout-0.1.0/docs/en
+copying docs/en/WALKTHROUGH.md -> boundscout-0.1.0/docs/en
+copying docs/zh/ARCHITECTURE.md -> boundscout-0.1.0/docs/zh
+copying docs/zh/DEVELOPMENT.md -> boundscout-0.1.0/docs/zh
+copying docs/zh/PROJECT_TALK.md -> boundscout-0.1.0/docs/zh
+copying docs/zh/PROTOCOL.md -> boundscout-0.1.0/docs/zh
+copying docs/zh/RELEASE.md -> boundscout-0.1.0/docs/zh
+copying docs/zh/RESEARCH.md -> boundscout-0.1.0/docs/zh
+copying docs/zh/RESULTS.md -> boundscout-0.1.0/docs/zh
+copying docs/zh/RESUME.md -> boundscout-0.1.0/docs/zh
+copying docs/zh/WALKTHROUGH.md -> boundscout-0.1.0/docs/zh
+copying examples/local_vectors.py -> boundscout-0.1.0/examples
+copying results/acceptance.json -> boundscout-0.1.0/results
+copying results/environment.json -> boundscout-0.1.0/results
+copying results/summary.json -> boundscout-0.1.0/results
+copying results/figures/query_latency.png -> boundscout-0.1.0/results/figures
+copying results/logs/clean-editable.log -> boundscout-0.1.0/results/logs
+copying results/logs/clean-install.log -> boundscout-0.1.0/results/logs
+copying results/logs/default-demo.log -> boundscout-0.1.0/results/logs
+copying results/logs/documentation.log -> boundscout-0.1.0/results/logs
+copying results/logs/format.log -> boundscout-0.1.0/results/logs
+copying results/logs/integration-tests.log -> boundscout-0.1.0/results/logs
+copying results/logs/mypy.log -> boundscout-0.1.0/results/logs
+copying results/logs/public-api.log -> boundscout-0.1.0/results/logs
+copying results/logs/ruff.log -> boundscout-0.1.0/results/logs
+copying results/logs/storage-example.log -> boundscout-0.1.0/results/logs
+copying results/logs/unit-tests.log -> boundscout-0.1.0/results/logs
+copying results/raw/full.json -> boundscout-0.1.0/results/raw
+copying scripts/analyze.py -> boundscout-0.1.0/scripts
+copying scripts/check_docs.py -> boundscout-0.1.0/scripts
+copying scripts/download_data.py -> boundscout-0.1.0/scripts
+copying scripts/render_readme.py -> boundscout-0.1.0/scripts
+copying scripts/validate.py -> boundscout-0.1.0/scripts
+copying src/boundscout/__init__.py -> boundscout-0.1.0/src/boundscout
+copying src/boundscout/__main__.py -> boundscout-0.1.0/src/boundscout
+copying src/boundscout/cli.py -> boundscout-0.1.0/src/boundscout
+copying src/boundscout/engine.py -> boundscout-0.1.0/src/boundscout
+copying src/boundscout/storage.py -> boundscout-0.1.0/src/boundscout
+copying src/boundscout.egg-info/PKG-INFO -> boundscout-0.1.0/src/boundscout.egg-info
+copying src/boundscout.egg-info/SOURCES.txt -> boundscout-0.1.0/src/boundscout.egg-info
+copying src/boundscout.egg-info/dependency_links.txt -> boundscout-0.1.0/src/boundscout.egg-info
+copying src/boundscout.egg-info/entry_points.txt -> boundscout-0.1.0/src/boundscout.egg-info
+copying src/boundscout.egg-info/requires.txt -> boundscout-0.1.0/src/boundscout.egg-info
+copying src/boundscout.egg-info/top_level.txt -> boundscout-0.1.0/src/boundscout.egg-info
+copying tests/test_benchmark.py -> boundscout-0.1.0/tests
+copying tests/test_cli.py -> boundscout-0.1.0/tests
+copying tests/test_engine.py -> boundscout-0.1.0/tests
+copying tests/test_storage.py -> boundscout-0.1.0/tests
+copying src/boundscout.egg-info/SOURCES.txt -> boundscout-0.1.0/src/boundscout.egg-info
+Writing boundscout-0.1.0/setup.cfg
+Creating tar archive
+removing 'boundscout-0.1.0' (and everything under it)
+* Building wheel from sdist
+* Getting build dependencies for wheel...
+running egg_info
+writing src/boundscout.egg-info/PKG-INFO
+writing dependency_links to src/boundscout.egg-info/dependency_links.txt
+writing entry points to src/boundscout.egg-info/entry_points.txt
+writing requirements to src/boundscout.egg-info/requires.txt
+writing top-level names to src/boundscout.egg-info/top_level.txt
+reading manifest file 'src/boundscout.egg-info/SOURCES.txt'
+reading manifest template 'MANIFEST.in'
+adding license file 'LICENSE'
+adding license file 'NOTICE.md'
+adding license file 'NOTICE_zh.md'
+writing manifest file 'src/boundscout.egg-info/SOURCES.txt'
+* Building wheel...
+running bdist_wheel
+running build
+running build_py
+creating build/lib/boundscout
+copying src/boundscout/__init__.py -> build/lib/boundscout
+copying src/boundscout/engine.py -> build/lib/boundscout
+copying src/boundscout/cli.py -> build/lib/boundscout
+copying src/boundscout/storage.py -> build/lib/boundscout
+copying src/boundscout/__main__.py -> build/lib/boundscout
+running egg_info
+writing src/boundscout.egg-info/PKG-INFO
+writing dependency_links to src/boundscout.egg-info/dependency_links.txt
+writing entry points to src/boundscout.egg-info/entry_points.txt
+writing requirements to src/boundscout.egg-info/requires.txt
+writing top-level names to src/boundscout.egg-info/top_level.txt
+reading manifest file 'src/boundscout.egg-info/SOURCES.txt'
+reading manifest template 'MANIFEST.in'
+adding license file 'LICENSE'
+adding license file 'NOTICE.md'
+adding license file 'NOTICE_zh.md'
+writing manifest file 'src/boundscout.egg-info/SOURCES.txt'
+installing to build/bdist.macosx-10.9-universal2/wheel
+running install
+running install_lib
+creating build/bdist.macosx-10.9-universal2/wheel
+creating build/bdist.macosx-10.9-universal2/wheel/boundscout
+copying build/lib/boundscout/__init__.py -> build/bdist.macosx-10.9-universal2/wheel/./boundscout
+copying build/lib/boundscout/engine.py -> build/bdist.macosx-10.9-universal2/wheel/./boundscout
+copying build/lib/boundscout/cli.py -> build/bdist.macosx-10.9-universal2/wheel/./boundscout
+copying build/lib/boundscout/storage.py -> build/bdist.macosx-10.9-universal2/wheel/./boundscout
+copying build/lib/boundscout/__main__.py -> build/bdist.macosx-10.9-universal2/wheel/./boundscout
+running install_egg_info
+Copying src/boundscout.egg-info to build/bdist.macosx-10.9-universal2/wheel/./boundscout-0.1.0-py3.12.egg-info
+running install_scripts
+creating build/bdist.macosx-10.9-universal2/wheel/boundscout-0.1.0.dist-info/WHEEL
+creating '$PROJECT/dist/.tmp-5vatwkkf/boundscout-0.1.0-py3-none-any.whl' and adding 'build/bdist.macosx-10.9-universal2/wheel' to it
+adding 'boundscout/__init__.py'
+adding 'boundscout/__main__.py'
+adding 'boundscout/cli.py'
+adding 'boundscout/engine.py'
+adding 'boundscout/storage.py'
+adding 'boundscout-0.1.0.dist-info/licenses/LICENSE'
+adding 'boundscout-0.1.0.dist-info/licenses/NOTICE.md'
+adding 'boundscout-0.1.0.dist-info/licenses/NOTICE_zh.md'
+adding 'boundscout-0.1.0.dist-info/METADATA'
+adding 'boundscout-0.1.0.dist-info/WHEEL'
+adding 'boundscout-0.1.0.dist-info/entry_points.txt'
+adding 'boundscout-0.1.0.dist-info/top_level.txt'
+adding 'boundscout-0.1.0.dist-info/RECORD'
+removing build/bdist.macosx-10.9-universal2/wheel
+Successfully built boundscout-0.1.0.tar.gz and boundscout-0.1.0-py3-none-any.whl
