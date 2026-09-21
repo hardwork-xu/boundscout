@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "name": "offline-smoke",
+  "frozen_date": "2026-09-21",
+  "repeats": 7,
+  "warmup": 1,
+  "native_threads": 1,
+  "order_seed": 20260921,
+  "leaf_size": 64,
+  "workloads": [
+    {"id": "smoke-clustered", "kind": "clustered", "n": 256, "dimensions": 8, "queries": 8, "k": 3, "clusters": 4, "center_scale": 8.0, "cluster_std": 0.5, "seeds": [20260921]},
+    {"id": "smoke-isotropic", "kind": "isotropic", "n": 256, "dimensions": 16, "queries": 8, "k": 10, "seeds": [20260922]}
+  ]
+}

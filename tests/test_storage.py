@@ -1,5 +1,6 @@
 """Real filesystem round trips and persistence integrity failures."""
 
+import hashlib
 import json
 
 import numpy as np
@@ -73,6 +74,23 @@ def test_load_rejects_missing_array(saved_index):
     path, _ = saved_index
     sorted(path.glob("*.npy"))[0].unlink()
     with pytest.raises((ValueError, OSError)):
+        BoundIndex.load(path)
+
+
+@pytest.mark.parametrize("payload_kind", ["empty", "npz"])
+def test_load_rejects_non_npy_payload_with_matching_digest(saved_index, payload_kind):
+    path, _ = saved_index
+    array_path = path / "ids.npy"
+    if payload_kind == "empty":
+        array_path.write_bytes(b"")
+    else:
+        with array_path.open("wb") as stream:
+            np.savez(stream, ids=np.array([0, 1], dtype=np.int64))
+    metadata_path = path / "metadata.json"
+    metadata = json.loads(metadata_path.read_text(encoding="utf-8"))
+    metadata["sha256"][array_path.name] = hashlib.sha256(array_path.read_bytes()).hexdigest()
+    metadata_path.write_text(json.dumps(metadata), encoding="utf-8")
+    with pytest.raises(ValueError):
         BoundIndex.load(path)
 
 

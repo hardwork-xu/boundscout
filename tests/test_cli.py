@@ -83,6 +83,17 @@ def test_invalid_dataset_does_not_create_index(tmp_path):
 
 
 @pytest.mark.integration
+def test_empty_input_file_reports_bilingual_error(tmp_path):
+    source = tmp_path / "empty.npy"
+    source.write_bytes(b"")
+    result = run_cli("build", "--input", source, "--output", tmp_path / "index")
+    assert result.returncode == 2
+    assert re.search(r"[\u4e00-\u9fff]", result.stderr)
+    assert "Traceback" not in result.stderr
+    assert not (tmp_path / "index").exists()
+
+
+@pytest.mark.integration
 def test_cli_refuses_to_replace_index(tmp_path):
     source = tmp_path / "points.npy"
     np.save(source, np.zeros((8, 2)), allow_pickle=False)

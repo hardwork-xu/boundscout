@@ -7,9 +7,10 @@ import json
 import sys
 from dataclasses import asdict
 from pathlib import Path
-from typing import NoReturn
+from typing import Any, NoReturn
 
 import numpy as np
+from numpy.typing import NDArray
 
 from . import BoundIndex, __version__, exhaustive_search
 
@@ -19,6 +20,14 @@ class BilingualParser(argparse.ArgumentParser):
 
     def error(self, message: str) -> NoReturn:
         super().error(f"{message} / 参数错误")
+
+
+def _load_vectors(path: Path) -> NDArray[Any]:
+    loaded = np.load(path, mmap_mode="r", allow_pickle=False)
+    if not isinstance(loaded, np.ndarray):
+        loaded.close()
+        raise ValueError("expected NPY array / 需要 NPY 数组")
+    return loaded
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -78,7 +87,7 @@ def main(argv: list[str] | None = None) -> int:
                 )
                 return 0 if ok else 1
         if args.command == "build":
-            points = np.load(args.input, mmap_mode="r", allow_pickle=False)
+            points = _load_vectors(args.input)
             with BoundIndex.build(
                 points, leaf_size=args.leaf_size, layout=args.layout, max_bytes=args.max_bytes
             ) as index:
@@ -91,7 +100,7 @@ def main(argv: list[str] | None = None) -> int:
         else:
             if args.output.exists():
                 raise FileExistsError("output already exists / 输出已存在")
-            queries = np.load(args.input, mmap_mode="r", allow_pickle=False)
+            queries = _load_vectors(args.input)
             with BoundIndex.load(args.index) as index:
                 result = index.search(queries, k=args.k, prune=not args.no_prune)
                 # Exclusive creation prevents overwrites. / 独占创建防止覆盖。
@@ -99,6 +108,6 @@ def main(argv: list[str] | None = None) -> int:
                     np.savez(stream, indices=result.indices, distances=result.distances)
                 print(json.dumps({"ok": True, "stats": asdict(result.stats)}))
         return 0
-    except (OSError, ValueError, TypeError) as error:
+    except (OSError, ValueError, TypeError, EOFError) as error:
         print(f"error / 错误: {error}", file=sys.stderr)
         return 2

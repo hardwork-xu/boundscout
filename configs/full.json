@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "name": "preregistered-full",
+  "frozen_date": "2026-09-21",
+  "repeats": 7,
+  "warmup": 1,
+  "native_threads": 1,
+  "order_seed": 20260921,
+  "leaf_size": 256,
+  "primary_target": {
+    "workload_id": "clustered-primary",
+    "baseline": "cdist-256",
+    "method": "spatial-pruned",
+    "minimum_speedup": 1.5,
+    "minimum_evaluated_vector_reduction": 0.75
+  },
+  "workloads": [
+    {"id": "clustered-small", "kind": "clustered", "n": 4096, "dimensions": 8, "queries": 64, "k": 1, "clusters": 16, "center_scale": 8.0, "cluster_std": 0.5, "seeds": [20260921, 20260922]},
+    {"id": "clustered-primary", "kind": "clustered", "n": 32768, "dimensions": 32, "queries": 64, "k": 10, "clusters": 16, "center_scale": 8.0, "cluster_std": 0.5, "seeds": [20260921, 20260922]},
+    {"id": "clustered-large-k", "kind": "clustered", "n": 4096, "dimensions": 32, "queries": 64, "k": 100, "clusters": 16, "center_scale": 8.0, "cluster_std": 0.5, "seeds": [20260921, 20260922]},
+    {"id": "isotropic-high-d-small", "kind": "isotropic", "n": 4096, "dimensions": 128, "queries": 64, "k": 100, "seeds": [20260921, 20260922]},
+    {"id": "isotropic-high-d-large", "kind": "isotropic", "n": 32768, "dimensions": 128, "queries": 64, "k": 10, "seeds": [20260921, 20260922]},
+    {"id": "glove25-real", "kind": "glove", "n": 32768, "dimensions": 25, "queries": 64, "k": 10, "dataset_path": "data/glove-25-angular.hdf5", "normalization": "l2-float64", "seeds": [20260921, 20260922]}
+  ]
+}

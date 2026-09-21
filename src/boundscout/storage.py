@@ -94,7 +94,11 @@ def load_index(path: Path, *, max_bytes: int = 1 << 30, verify: bool = True) -> 
         for p in paths:
             if verify and _digest(p) != hashes.get(p.name):
                 raise ValueError("index checksum mismatch / 索引校验和不匹配")
-            arrays.append(np.load(p, mmap_mode="r", allow_pickle=False))
+            loaded = np.load(p, mmap_mode="r", allow_pickle=False)
+            if not isinstance(loaded, np.ndarray):
+                loaded.close()
+                raise ValueError("expected NPY array / 需要 NPY 数组")
+            arrays.append(loaded)
         points, ids, offsets, lower, upper = arrays
         if points.dtype != np.float64 or ids.dtype != np.int64 or offsets.dtype != np.int64:
             raise ValueError("invalid index dtype / 索引类型无效")
@@ -126,7 +130,7 @@ def load_index(path: Path, *, max_bytes: int = 1 << 30, verify: bool = True) -> 
             if not np.array_equal(upper[block], points[start:stop].max(axis=0)):
                 raise ValueError("invalid upper bounds / 上界包围盒无效")
         return BoundIndex(points, ids, offsets, lower, upper, leaf_size, layout)
-    except (OSError, ValueError, KeyError, TypeError, OverflowError) as error:
+    except (OSError, ValueError, KeyError, TypeError, OverflowError, EOFError) as error:
         for array in arrays:
             mapping = getattr(array, "_mmap", None)
             if mapping is not None:
