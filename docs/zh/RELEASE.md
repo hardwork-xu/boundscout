@@ -32,7 +32,7 @@ docker build -t boundscout .
 docker run --rm boundscout
 ```
 
-这些 Docker 命令是复现路径，不是容器已运行成功的证据。镜像固定 Python 3.12.10，但基础镜像标签未绑定摘要，未来重建的操作系统层可能变化。本地证据使用 Python 3.12.2，不能等同于容器证据。
+这些 Docker 命令已在 `d7cfd6e` 的 Ubuntu CI 运行 `35601617064` 中通过；本机仍无 Docker。参见[发布证据](../../results/publication.json)。镜像固定 Python 3.12.10，但基础镜像标签未绑定摘要，未来重建的操作系统层可能变化。本地证据使用 Python 3.12.2，不能等同于容器证据。
 
 ## 公开元数据
 
@@ -43,3 +43,7 @@ Topics：`nearest-neighbor-search`、`vector-search`、`cpu`、`numpy`、`scipy`
 许可证：[MIT](../../LICENSE)。依赖与 GloVe 归属见 [NOTICE](../../NOTICE_zh.md)。`CITATION.cff` 使用合法 YAML 子集 JSON，只列出已核验的公开维护者账号。引用时保留版本、源码提交和实验 run ID；本项目没有 DOI 或对应论文。
 
 发布范围为 GitHub 仓库及其发布附件。不包含 PyPI 上传、托管服务、付费资源、外部宣传或私人数据集发布。发布附件在本地构建，发布记录区分实际执行的外部操作与准备好的命令。
+
+## 实际发布状态
+
+公开仓库与 GitHub `v0.1.0` 已发布。附件由干净 Git 归档 `d7cfd6e` 构建，GitHub 附件哈希及匿名下载的 wheel 均与本地文件一致。随后加入的发布记录只保存这些实际观察，不修改被测实现。未执行 PyPI 上传或公网服务部署。

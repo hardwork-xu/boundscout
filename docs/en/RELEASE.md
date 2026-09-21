@@ -32,7 +32,7 @@ docker build -t boundscout .
 docker run --rm boundscout
 ```
 
-These Docker commands are a reproduction path, not evidence of a successful container run. The image uses fixed Python 3.12.10; the base tag is not digest-pinned, so future OS-layer rebuilds can differ. The local evidence uses Python 3.12.2 and must not be equated with container evidence.
+These Docker commands passed in Ubuntu CI run `35601617064` at `d7cfd6e`; local Docker remains unavailable. See [publication evidence](../../results/publication.json). The image uses fixed Python 3.12.10; the base tag is not digest-pinned, so future OS-layer rebuilds can differ. The local evidence uses Python 3.12.2 and must not be equated with container evidence.
 
 ## Public metadata
 
@@ -43,3 +43,7 @@ Topics: `nearest-neighbor-search`, `vector-search`, `cpu`, `numpy`, `scipy`, `be
 License: [MIT](../../LICENSE). Dependencies and GloVe attribution: [NOTICE](../../NOTICE.md). `CITATION.cff` is JSON, which is valid YAML, and names only the verified public maintainer account. Cite the version, source revision and benchmark run ID; there is no DOI or associated publication.
 
 Publication scope is the GitHub repository and its release assets. No PyPI upload, hosted service, paid resource, external announcement, or private dataset publication is part of this release. Release assets are built locally; the publication receipt distinguishes actual external actions from prepared commands.
+
+## Published state
+
+The public repository and GitHub release `v0.1.0` are live. Release assets were built from clean Git archive `d7cfd6e`, and GitHub asset hashes plus an anonymous wheel download match the local files. Publication receipts added afterward document these observations; they do not change measured implementation. PyPI and public-service deployment were not performed.

@@ -74,3 +74,5 @@ Later validation should be appended as an observed checkpoint, preserving the ea
 ## Public verification checkpoint
 
 Commit `58c2e8e` preserves the complete benchmark and corrects the earlier test-count typo; `2f5a4cd` adds the reviewed bilingual documents and local acceptance. GitHub run `35600862457` completed successfully for both Ubuntu 24.04 and macOS 14 at `2f5a4cd`. This is ordinary CPU CI evidence, separate from the local M1 Pro full experiment. The current publication receipt records repository, CI and release state.
+
+Commit `d7cfd6e` adds Linux container verification. Run `35601617064` passed both CPU jobs and the Ubuntu Docker build/demo; the macOS Docker step was intentionally skipped. GitHub release `v0.1.0` was published from that revision, with a clean-source build, matching uploaded SHA256 values and a verified anonymous wheel download. Final receipt-only edits follow publication; numerical engine and benchmark remain the measured versions.

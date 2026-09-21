@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "observed_at_utc": "2026-09-21T12:44:48.481497+00:00",
+  "observed_at_utc": "2026-09-21T12:55:17.380947+00:00",
   "repository": {
     "created_at": "2026-09-21T12:39:53Z",
     "default_branch": "main",
@@ -10,218 +10,288 @@
   "initial_public_commit": "2f5a4cd184bda3efdc2512e1a27a6dc3c3d7583a",
   "remote_ci": {
     "conclusion": "success",
-    "databaseId": 35600862457,
-    "headSha": "2f5a4cd184bda3efdc2512e1a27a6dc3c3d7583a",
+    "databaseId": 35601617064,
+    "headSha": "d7cfd6e347d332e003333977a7b9a2274087c526",
     "jobs": [
       {
-        "completedAt": "2026-09-21T12:40:48Z",
+        "completedAt": "2026-09-21T12:48:54Z",
         "conclusion": "success",
-        "databaseId": 106336368712,
-        "name": "checks (macos-14)",
-        "startedAt": "2026-09-21T12:40:12Z",
+        "databaseId": 106338805466,
+        "name": "checks (ubuntu-24.04)",
+        "startedAt": "2026-09-21T12:47:50Z",
         "status": "completed",
         "steps": [
           {
-            "completedAt": "2026-09-21T12:40:14Z",
+            "completedAt": "2026-09-21T12:47:51Z",
             "conclusion": "success",
             "name": "Set up job",
             "number": 1,
-            "startedAt": "2026-09-21T12:40:13Z",
+            "startedAt": "2026-09-21T12:47:50Z",
             "status": "completed"
           },
           {
-            "completedAt": "2026-09-21T12:40:15Z",
+            "completedAt": "2026-09-21T12:47:52Z",
             "conclusion": "success",
             "name": "Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
             "number": 2,
-            "startedAt": "2026-09-21T12:40:14Z",
+            "startedAt": "2026-09-21T12:47:51Z",
             "status": "completed"
           },
           {
-            "completedAt": "2026-09-21T12:40:16Z",
+            "completedAt": "2026-09-21T12:47:53Z",
             "conclusion": "success",
             "name": "Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
             "number": 3,
-            "startedAt": "2026-09-21T12:40:15Z",
+            "startedAt": "2026-09-21T12:47:52Z",
             "status": "completed"
           },
           {
-            "completedAt": "2026-09-21T12:40:18Z",
+            "completedAt": "2026-09-21T12:47:56Z",
             "conclusion": "success",
             "name": "Run python -m venv .venv",
             "number": 4,
-            "startedAt": "2026-09-21T12:40:16Z",
+            "startedAt": "2026-09-21T12:47:53Z",
             "status": "completed"
           },
           {
-            "completedAt": "2026-09-21T12:40:32Z",
+            "completedAt": "2026-09-21T12:48:12Z",
             "conclusion": "success",
             "name": "Run make install",
             "number": 5,
-            "startedAt": "2026-09-21T12:40:18Z",
+            "startedAt": "2026-09-21T12:47:56Z",
             "status": "completed"
           },
           {
-            "completedAt": "2026-09-21T12:40:40Z",
+            "completedAt": "2026-09-21T12:48:25Z",
             "conclusion": "success",
             "name": "Run make demo test lint typecheck docs build",
             "number": 6,
-            "startedAt": "2026-09-21T12:40:32Z",
+            "startedAt": "2026-09-21T12:48:12Z",
             "status": "completed"
           },
           {
-            "completedAt": "2026-09-21T12:40:40Z",
+            "completedAt": "2026-09-21T12:48:26Z",
             "conclusion": "success",
             "name": "Run make benchmark",
             "number": 7,
-            "startedAt": "2026-09-21T12:40:40Z",
+            "startedAt": "2026-09-21T12:48:25Z",
             "status": "completed"
           },
           {
-            "completedAt": "2026-09-21T12:40:42Z",
+            "completedAt": "2026-09-21T12:48:51Z",
+            "conclusion": "success",
+            "name": "Docker build and demo (Linux)",
+            "number": 8,
+            "startedAt": "2026-09-21T12:48:26Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-21T12:48:52Z",
             "conclusion": "success",
             "name": "Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02",
-            "number": 8,
-            "startedAt": "2026-09-21T12:40:40Z",
+            "number": 9,
+            "startedAt": "2026-09-21T12:48:51Z",
             "status": "completed"
           },
           {
-            "completedAt": "2026-09-21T12:40:45Z",
+            "completedAt": "2026-09-21T12:48:52Z",
             "conclusion": "success",
             "name": "Post Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
-            "number": 15,
-            "startedAt": "2026-09-21T12:40:42Z",
+            "number": 17,
+            "startedAt": "2026-09-21T12:48:52Z",
             "status": "completed"
           },
           {
-            "completedAt": "2026-09-21T12:40:45Z",
+            "completedAt": "2026-09-21T12:48:53Z",
             "conclusion": "success",
             "name": "Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
-            "number": 16,
-            "startedAt": "2026-09-21T12:40:45Z",
+            "number": 18,
+            "startedAt": "2026-09-21T12:48:52Z",
             "status": "completed"
           },
           {
-            "completedAt": "2026-09-21T12:40:46Z",
+            "completedAt": "2026-09-21T12:48:53Z",
             "conclusion": "success",
             "name": "Complete job",
-            "number": 17,
-            "startedAt": "2026-09-21T12:40:45Z",
+            "number": 19,
+            "startedAt": "2026-09-21T12:48:53Z",
             "status": "completed"
           }
         ],
-        "url": "https://github.com/hardwork-xu/boundscout/actions/runs/35600862457/job/106336368712"
+        "url": "https://github.com/hardwork-xu/boundscout/actions/runs/35601617064/job/106338805466"
       },
       {
-        "completedAt": "2026-09-21T12:40:49Z",
+        "completedAt": "2026-09-21T12:48:32Z",
         "conclusion": "success",
-        "databaseId": 106336369037,
-        "name": "checks (ubuntu-24.04)",
-        "startedAt": "2026-09-21T12:40:08Z",
+        "databaseId": 106338805780,
+        "name": "checks (macos-14)",
+        "startedAt": "2026-09-21T12:47:54Z",
         "status": "completed",
         "steps": [
           {
-            "completedAt": "2026-09-21T12:40:10Z",
+            "completedAt": "2026-09-21T12:47:55Z",
             "conclusion": "success",
             "name": "Set up job",
             "number": 1,
-            "startedAt": "2026-09-21T12:40:09Z",
+            "startedAt": "2026-09-21T12:47:54Z",
             "status": "completed"
           },
           {
-            "completedAt": "2026-09-21T12:40:11Z",
+            "completedAt": "2026-09-21T12:47:57Z",
             "conclusion": "success",
             "name": "Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
             "number": 2,
-            "startedAt": "2026-09-21T12:40:10Z",
+            "startedAt": "2026-09-21T12:47:55Z",
             "status": "completed"
           },
           {
-            "completedAt": "2026-09-21T12:40:11Z",
+            "completedAt": "2026-09-21T12:47:58Z",
             "conclusion": "success",
             "name": "Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
             "number": 3,
-            "startedAt": "2026-09-21T12:40:11Z",
+            "startedAt": "2026-09-21T12:47:57Z",
             "status": "completed"
           },
           {
-            "completedAt": "2026-09-21T12:40:14Z",
+            "completedAt": "2026-09-21T12:48:01Z",
             "conclusion": "success",
             "name": "Run python -m venv .venv",
             "number": 4,
-            "startedAt": "2026-09-21T12:40:11Z",
+            "startedAt": "2026-09-21T12:47:58Z",
             "status": "completed"
           },
           {
-            "completedAt": "2026-09-21T12:40:31Z",
+            "completedAt": "2026-09-21T12:48:16Z",
             "conclusion": "success",
             "name": "Run make install",
             "number": 5,
-            "startedAt": "2026-09-21T12:40:14Z",
+            "startedAt": "2026-09-21T12:48:01Z",
             "status": "completed"
           },
           {
-            "completedAt": "2026-09-21T12:40:43Z",
+            "completedAt": "2026-09-21T12:48:28Z",
             "conclusion": "success",
             "name": "Run make demo test lint typecheck docs build",
             "number": 6,
-            "startedAt": "2026-09-21T12:40:31Z",
+            "startedAt": "2026-09-21T12:48:16Z",
             "status": "completed"
           },
           {
-            "completedAt": "2026-09-21T12:40:44Z",
+            "completedAt": "2026-09-21T12:48:29Z",
             "conclusion": "success",
             "name": "Run make benchmark",
             "number": 7,
-            "startedAt": "2026-09-21T12:40:43Z",
+            "startedAt": "2026-09-21T12:48:28Z",
             "status": "completed"
           },
           {
-            "completedAt": "2026-09-21T12:40:45Z",
+            "completedAt": "2026-09-21T12:48:29Z",
+            "conclusion": "skipped",
+            "name": "Docker build and demo (Linux)",
+            "number": 8,
+            "startedAt": "2026-09-21T12:48:29Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-21T12:48:30Z",
             "conclusion": "success",
             "name": "Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02",
-            "number": 8,
-            "startedAt": "2026-09-21T12:40:44Z",
+            "number": 9,
+            "startedAt": "2026-09-21T12:48:29Z",
             "status": "completed"
           },
           {
-            "completedAt": "2026-09-21T12:40:47Z",
+            "completedAt": "2026-09-21T12:48:30Z",
             "conclusion": "success",
             "name": "Post Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
-            "number": 15,
-            "startedAt": "2026-09-21T12:40:45Z",
+            "number": 17,
+            "startedAt": "2026-09-21T12:48:30Z",
             "status": "completed"
           },
           {
-            "completedAt": "2026-09-21T12:40:47Z",
+            "completedAt": "2026-09-21T12:48:30Z",
             "conclusion": "success",
             "name": "Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
-            "number": 16,
-            "startedAt": "2026-09-21T12:40:47Z",
+            "number": 18,
+            "startedAt": "2026-09-21T12:48:30Z",
             "status": "completed"
           },
           {
-            "completedAt": "2026-09-21T12:40:47Z",
+            "completedAt": "2026-09-21T12:48:31Z",
             "conclusion": "success",
             "name": "Complete job",
-            "number": 17,
-            "startedAt": "2026-09-21T12:40:47Z",
+            "number": 19,
+            "startedAt": "2026-09-21T12:48:30Z",
             "status": "completed"
           }
         ],
-        "url": "https://github.com/hardwork-xu/boundscout/actions/runs/35600862457/job/106336369037"
+        "url": "https://github.com/hardwork-xu/boundscout/actions/runs/35601617064/job/106338805780"
       }
     ],
     "status": "completed",
-    "url": "https://github.com/hardwork-xu/boundscout/actions/runs/35600862457"
+    "url": "https://github.com/hardwork-xu/boundscout/actions/runs/35601617064"
   },
   "release": {
-    "status": "not_created"
+    "status": "published",
+    "assets": [
+      {
+        "apiUrl": "https://api.github.com/repos/hardwork-xu/boundscout/releases/assets/579038489",
+        "contentType": "application/octet-stream",
+        "createdAt": "2026-09-21T12:52:53Z",
+        "digest": "sha256:8be9d6a720d8fdd0124ff12ba0e90200f59c8c06ac39fffe291535c5f572058f",
+        "downloadCount": 0,
+        "id": "RA_kwDOUjy_U84ig20Z",
+        "label": "",
+        "name": "boundscout-0.1.0-py3-none-any.whl",
+        "size": 19401,
+        "state": "uploaded",
+        "updatedAt": "2026-09-21T12:52:53Z",
+        "url": "https://github.com/hardwork-xu/boundscout/releases/download/v0.1.0/boundscout-0.1.0-py3-none-any.whl"
+      },
+      {
+        "apiUrl": "https://api.github.com/repos/hardwork-xu/boundscout/releases/assets/579038490",
+        "contentType": "application/x-gtar",
+        "createdAt": "2026-09-21T12:52:53Z",
+        "digest": "sha256:758778554263d37909218985c35ff242136dae76e02a2fedefa53d3707e23d3a",
+        "downloadCount": 0,
+        "id": "RA_kwDOUjy_U84ig20a",
+        "label": "",
+        "name": "boundscout-0.1.0.tar.gz",
+        "size": 650358,
+        "state": "uploaded",
+        "updatedAt": "2026-09-21T12:52:54Z",
+        "url": "https://github.com/hardwork-xu/boundscout/releases/download/v0.1.0/boundscout-0.1.0.tar.gz"
+      },
+      {
+        "apiUrl": "https://api.github.com/repos/hardwork-xu/boundscout/releases/assets/579038493",
+        "contentType": "text/plain; charset=utf-8",
+        "createdAt": "2026-09-21T12:52:53Z",
+        "digest": "sha256:63c6013a3e3509a2c3fb197732ab569a00c2393de2a04f79f7358edcb55685d2",
+        "downloadCount": 0,
+        "id": "RA_kwDOUjy_U84ig20d",
+        "label": "",
+        "name": "SHA256SUMS.txt",
+        "size": 190,
+        "state": "uploaded",
+        "updatedAt": "2026-09-21T12:52:53Z",
+        "url": "https://github.com/hardwork-xu/boundscout/releases/download/v0.1.0/SHA256SUMS.txt"
+      }
+    ],
+    "isDraft": false,
+    "isPrerelease": false,
+    "publishedAt": "2026-09-21T12:52:55Z",
+    "tagName": "v0.1.0",
+    "targetCommitish": "d7cfd6e347d332e003333977a7b9a2274087c526",
+    "url": "https://github.com/hardwork-xu/boundscout/releases/tag/v0.1.0",
+    "source_commit": "d7cfd6e347d332e003333977a7b9a2274087c526",
+    "local_asset_hashes_match": true,
+    "anonymous_wheel_download_verified": true
   },
   "not_performed": [
     "PyPI publication",
     "public service deployment",
     "paid resource creation"
   ],
-  "privacy": "verified account no-reply identity; private context excluded from repository"
+  "privacy": "verified account no-reply identity; private context excluded from repository",
+  "push_retry": "A direct Git connection timed out; retry through the existing system proxy succeeded. No global configuration changed."
 }

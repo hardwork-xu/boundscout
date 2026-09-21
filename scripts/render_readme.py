@@ -111,7 +111,7 @@ with BoundIndex.build(vectors, leaf_size=128) as index:
 - float64 平方欧氏 top-k；按距离、原始行 ID 排序，剪枝可关闭，空间/输入布局可对照。
 - 不可变索引、NPY 持久化、只读内存映射；加载验证格式、哈希、完整 ID 排列与包围盒。
 - 程序化 API 与双语 `demo`、`build`、`query` 命令；默认无需网络、模型或密钥。
-- Python 3.12；本地验证为 macOS arm64 / M1 Pro CPU。Linux/macOS CI 状态以实际运行记录为准；Docker 本地未执行。
+- Python 3.12；本地验证为 macOS arm64 / M1 Pro CPU。Linux/macOS CI 状态以实际运行记录为准；Docker 已在 Ubuntu CI 验证，本地未执行。
 
 {diagram}
 
@@ -181,7 +181,7 @@ The contribution is an integrated implementation of spatial packing, conservativ
 - Float64 squared-Euclidean top-k with `(distance, original row ID)` ordering, optional pruning and spatial/input layouts.
 - Immutable index, NPY persistence and read-only mappings; loading validates schema, hashes, the complete ID permutation and block geometry.
 - Programmatic API and bilingual `demo`, `build`, `query` commands; the default path needs no network, model or key.
-- Python 3.12. Local verification: macOS arm64 / M1 Pro CPU. Linux/macOS CI status follows actual run receipts; Docker was not run locally.
+- Python 3.12. Local verification: macOS arm64 / M1 Pro CPU. Linux/macOS CI status follows actual run receipts; Docker build and demo passed in Ubuntu CI; it was not run locally.
 
 {diagram}
 

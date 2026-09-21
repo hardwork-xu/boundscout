@@ -13,7 +13,7 @@ The contribution is an integrated implementation of spatial packing, conservativ
 - Float64 squared-Euclidean top-k with `(distance, original row ID)` ordering, optional pruning and spatial/input layouts.
 - Immutable index, NPY persistence and read-only mappings; loading validates schema, hashes, the complete ID permutation and block geometry.
 - Programmatic API and bilingual `demo`, `build`, `query` commands; the default path needs no network, model or key.
-- Python 3.12. Local verification: macOS arm64 / M1 Pro CPU. Linux/macOS CI status follows actual run receipts; Docker was not run locally.
+- Python 3.12. Local verification: macOS arm64 / M1 Pro CPU. Linux/macOS CI status follows actual run receipts; Docker build and demo passed in Ubuntu CI; it was not run locally.
 
 ```mermaid
 flowchart LR

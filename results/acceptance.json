@@ -300,9 +300,39 @@
       "summary": "{\n  \"ok\": true,\n  \"files_scanned\": 93,\n  \"findings\": [],\n  \"changed_recorded_benchmark_files\": [],\n  \"documented_reporting_only_changes\": [\n    \"scripts/analyze.py\"\n  ],\n  \"wheel_artifacts_scanned\": [\n    \"boundscout-0.1.0-py3-none-any.whl\"\n  ],\n  \"scope\": \"content/history patterns and recorded source digests; not a security guarantee\"\n}\n",
       "log": "results/logs/release-audit.log",
       "source_sha256": "b79596e156df812a52a1ec0a4ba942ded4c8e1695fbd9eb3ae03c376c6f690cc"
+    },
+    {
+      "name": "remote-ci",
+      "command": "gh run view 35601617064 --repo hardwork-xu/boundscout --json status,conclusion,jobs",
+      "status": "passed",
+      "exit_code": 0,
+      "summary": "Ubuntu24.04 and macOS14 CPU checks completed successfully.",
+      "evidence": "results/remote-ci-container.json",
+      "source_revision": "d7cfd6e347d332e003333977a7b9a2274087c526"
+    },
+    {
+      "name": "docker-linux-remote",
+      "command": [
+        "docker build -t boundscout .",
+        "docker run --rm boundscout"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "summary": "Executed in Ubuntu24.04 GitHub runner; local Docker remains not run.",
+      "evidence": "results/remote-ci-container.json",
+      "source_revision": "d7cfd6e347d332e003333977a7b9a2274087c526"
+    },
+    {
+      "name": "github-release-assets",
+      "command": "gh release create v0.1.0 dist/boundscout-0.1.0-py3-none-any.whl dist/boundscout-0.1.0.tar.gz dist/SHA256SUMS.txt --repo hardwork-xu/boundscout --target d7cfd6e347d332e003333977a7b9a2274087c526 --title 'BoundScout 0.1.0' --notes-file ../../work/github-release.md",
+      "status": "passed",
+      "exit_code": 0,
+      "summary": "Public release; all3 asset digests match; anonymous wheel download verified.",
+      "evidence": "results/publication.json",
+      "source_revision": "d7cfd6e347d332e003333977a7b9a2274087c526"
     }
   ],
-  "current_stage": "local acceptance completed; publication pending",
+  "current_stage": "public repository, CI and v0.1.0 release verified",
   "final_source": {
     "git_revision": "58c2e8e5852bf1a8d373bcad5b6696e4b6bea5f8",
     "files_sha256": {
@@ -328,5 +358,6 @@
     "sha256": "b79596e156df812a52a1ec0a4ba942ded4c8e1695fbd9eb3ae03c376c6f690cc"
   },
   "status": "passed",
-  "finished_at_utc": "2026-09-21T12:37:53.491822+00:00"
+  "finished_at_utc": "2026-09-21T12:37:53.491822+00:00",
+  "observed_at_utc": "2026-09-21T12:55:17.380947+00:00"
 }
