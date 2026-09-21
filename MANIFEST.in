@@ -1,0 +1,9 @@
+include LICENSE NOTICE.md NOTICE_zh.md README_zh.md CITATION.cff
+include requirements.lock Makefile Dockerfile .dockerignore AGENTS.md CONTRIBUTING*.md SECURITY*.md
+include benchmark.py
+recursive-include docs *.md
+recursive-include configs *.json
+recursive-include scripts *.py
+recursive-include tests *.py
+recursive-include examples *.py
+recursive-include results *.json *.png *.log

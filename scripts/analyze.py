@@ -8,6 +8,7 @@ import argparse
 import glob
 import json
 import math
+import os
 from pathlib import Path
 from typing import Any
 
@@ -128,7 +129,13 @@ def summarize(raw: dict[str, Any]) -> list[dict[str, Any]]:
     return rows
 
 
-def render_report(runs: list[dict[str, Any]], rows: list[dict[str, Any]], *, chinese: bool) -> str:
+def render_report(
+    runs: list[dict[str, Any]],
+    rows: list[dict[str, Any]],
+    *,
+    chinese: bool,
+    image_link: str = "../../results/figures/query_latency.png",
+) -> str:
     """Both language versions share numeric derivation; 两种语言共用数值推导。"""
     if chinese:
         lines = [
@@ -158,7 +165,7 @@ def render_report(runs: list[dict[str, Any]], rows: list[dict[str, Any]], *, chi
             f"- `{run['run_id']}` · `{run['config']['name']}` · {run['started_at_utc']}",
             f"  - {machine['os']} {machine['architecture']} · {machine['cpu']} · Python {machine['python']} · native threads = {run['config']['native_threads']}",
             f"  - Git `{run['source'].get('git_revision')}`; dirty = `{run['source'].get('git_dirty')}`; source SHA256 `{run['source']['sha256']}`.",
-            f"  - Raw / 原始证据: [JSON](../../{run['_input_path']}); command / 命令: `{' '.join(run['command'])}`.",
+            f"  - Raw / 原始证据: [JSON]({run.get('_report_path', '../../' + run['_input_path'])}); command / 命令: `{' '.join(run['command'])}`.",
             f"  - Dependencies / 依赖: `{json.dumps(machine['dependencies'], sort_keys=True)}`.",
         ]
     lines += ["", "## 主要目标对照" if chinese else "## Primary target comparison", ""]
@@ -211,11 +218,11 @@ def render_report(runs: list[dict[str, Any]], rows: list[dict[str, Any]], *, chi
         "索引 MiB 是数组逻辑字节数；RSS MiB 是独立新进程的实测峰值，包含解释器、导入、数据准备、构建和一个查询批次。两者不能相减或视作同一统计口径。cKDTree 完整逻辑字节数未公开，保留空值。"
         if chinese
         else "Index MiB is logical array bytes. RSS MiB is the measured peak of a fresh isolated process, including interpreter, imports, data preparation, build and one query batch. These are different scopes and must not be subtracted. Complete cKDTree logical bytes are unavailable and remain blank.",
-        "回本批次数 = ceil(构建耗时 / (基线批次耗时 − 方法批次耗时))；没有稳态收益时记为 —。每批次 Q 次查询。输入数组仍存活；BoundIndex 自有数据副本，cdist 借用输入。"
+        "相对 cdist-256 的回本批次数 = ceil(构建耗时 / (cdist-256 批次耗时 − 方法批次耗时))；没有稳态收益时记为 —。每批次 Q 次查询。输入数组仍存活；BoundIndex 自有数据副本，cdist 借用输入。"
         if chinese
-        else "Break-even batches = ceil(build time / (baseline batch time − method batch time)); no steady-state benefit is shown as —. Each batch has Q queries. Input arrays remain alive: BoundIndex owns a copy, while cdist borrows input.",
+        else "Break-even batches vs cdist-256 = ceil(build time / (cdist-256 batch time − method batch time)); no steady-state benefit is shown as —. Each batch has Q queries. Input arrays remain alive: BoundIndex owns a copy, while cdist borrows input.",
         "",
-        "| Run/workload/seed | Method | Build ms | First query µs | Save/load ms | Index MiB | Peak RSS MiB | Break-even batches |",
+        "| Run/workload/seed | Method | Build ms | First query µs | Save/load ms | Index MiB | Peak RSS MiB | Break-even batches vs cdist-256 |",
         "|---|---|---:|---:|---:|---:|---:|---:|",
     ]
     for row in rows:
@@ -284,7 +291,7 @@ def render_report(runs: list[dict[str, Any]], rows: list[dict[str, Any]], *, chi
         if chinese
         else "High-dimensional isotropic and real GloVe workloads probe applicability. Synthetic cluster structure may favor bounding-box pruning. Results do not establish benefits for other embeddings, approximate retrieval, production services or other hardware. Independent seeds remain separate; no pooled significance claim is made.",
         "",
-        "![Query batch latency / 查询批次延迟](../../results/figures/query_latency.png)",
+        f"![Query batch latency / 查询批次延迟]({image_link})",
         "",
         "图中误差线为所保存样本的最小与最大值，纵轴为对数尺度。"
         if chinese
@@ -370,6 +377,7 @@ def main() -> int:
             raw["_input_path"] = path.resolve().relative_to(root).as_posix()
         except ValueError:
             raw["_input_path"] = path.name
+        raw["_source_path"] = str(path.resolve())
         runs.append(raw)
     rows = [row for raw in runs for row in summarize(raw)]
     args.output_dir.mkdir(parents=True, exist_ok=True)
@@ -380,7 +388,14 @@ def main() -> int:
     for language in ("en", "zh"):
         directory = args.docs_root / language
         directory.mkdir(parents=True, exist_ok=True)
-        (directory / "RESULTS.md").write_text(render_report(runs, rows, chinese=language == "zh"))
+        for raw in runs:
+            raw["_report_path"] = Path(os.path.relpath(raw["_source_path"], directory)).as_posix()
+        figure_link = Path(
+            os.path.relpath(args.output_dir / "figures/query_latency.png", directory)
+        ).as_posix()
+        (directory / "RESULTS.md").write_text(
+            render_report(runs, rows, chinese=language == "zh", image_link=figure_link)
+        )
     print(f"Analyzed {len(runs)} runs, {len(rows)} records / 已分析运行与记录")
     return 0
 

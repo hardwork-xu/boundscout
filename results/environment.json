@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "observed_at_utc": "2026-09-21T12:16:15.190821+00:00",
+  "os": "macOS",
+  "kernel": "25.6.0",
+  "architecture": "arm64",
+  "cpu": "Apple M1 Pro",
+  "logical_cpus": 10,
+  "physical_memory_bytes": 17179869184,
+  "free_disk_at_start_gib_approx": 230,
+  "python": "3.12.2",
+  "compiler": "Apple clang21.0.0",
+  "make": "available",
+  "gpu": "Apple M1 Pro integrated GPU, Metal4 reported; unused and unvalidated",
+  "cuda": "no NVIDIA runtime observed; outside scope",
+  "docker": {
+    "status": "not_run",
+    "reason": "Docker executable and standard socket absent"
+  },
+  "network": {
+    "pypi": "download/install passed",
+    "github": "authenticated API read passed",
+    "public_vectors": "127359688-byte GloVe25 file downloaded"
+  },
+  "measurement_conditions": "Shared interactive host; another sustained CPU process observed. No CPU affinity, exclusive-host claim, energy measurement or thermal control. Seeded randomized method order and all raw repetitions retained.",
+  "git_identity": "verified public GitHub login with GitHub no-reply email; global settings unchanged"
+}

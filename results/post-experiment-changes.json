@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "changes": [
+    {
+      "path": "scripts/analyze.py",
+      "before_sha256": "b9fda55aca814c0c0d2b025f12d0e6094d3e583b5b4e9472964669745dedb2c6",
+      "after_sha256": "b46739f457d06a3ad4c0584cd81cdf504a7a3047b6b28dbc977d640a6ec9e185",
+      "kind": "reporting-only",
+      "reason": "Label cdist256 amortization baseline and resolve links for separate reproduction report destinations. No numerical summaries or measured execution changed."
+    }
+  ]
+}
